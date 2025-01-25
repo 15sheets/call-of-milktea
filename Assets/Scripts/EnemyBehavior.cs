@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyBehavior : MonoBehaviour
 {
     public EnemyFSM fsm { get; private set; }
+
+    public UnityEvent attack;
 
     // set in editor
     public float rotationSpeed; // speed enemy rotates to face player
@@ -34,6 +37,11 @@ public class EnemyBehavior : MonoBehaviour
         navIdx = Random.Range(0, 2);
         lm = LayerMask.GetMask("Player", "Terrain");
         faceAngle = 0;
+
+        if (attack == null)
+        {
+            attack = new UnityEvent();
+        }
     }
 
     // Update is called once per frame
@@ -43,7 +51,8 @@ public class EnemyBehavior : MonoBehaviour
         {
             // attack code goes here l8r
             attackStart = false;
-            attackDone = true;
+
+            attack.Invoke();
         }
         fsm.Update();   
     }

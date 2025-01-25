@@ -20,6 +20,7 @@ public class StatMan : MonoBehaviour
     public float bulletCooldown { get; private set; }
 
     private Transform player;
+    private Health player_hp;
     private bool pause;
 
     void Awake()
@@ -32,6 +33,16 @@ public class StatMan : MonoBehaviour
     private void Update()
     {
         if (!pause) { timer += Time.deltaTime; }
+    }
+
+    public void damagePlayer(float dmg)
+    {
+        Debug.Log("player damaged");
+        player_hp.damage(dmg);
+    }
+    public void healPlayer(float health)
+    {
+        player_hp.heal(health);
     }
 
     public void decBulletCooldown(float multamt, bool set=false)
@@ -62,11 +73,17 @@ public class StatMan : MonoBehaviour
     public void setPlayer(Transform p)
     {
         player = p;
+        player_hp = p.GetComponent<Health>();
     }
 
     public Vector3 getPlayerPosition()
     {
         return player.position;
+    }
+
+    public void pauseTimer(bool p)
+    {
+        pause = p;
     }
 
 }

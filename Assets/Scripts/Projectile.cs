@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
     {
         // continue moving in direction
         float speed = (StatMan.sm.bulletSpeed < 0.1f) ? 20 : StatMan.sm.bulletSpeed;
-        transform.Translate(speed * Time.fixedDeltaTime, 0f, 0f);
+        transform.Translate(0f, 0f, speed * Time.fixedDeltaTime);
 
         // raycast check for collisions
         Collider[] results = new Collider[maxColliders];
