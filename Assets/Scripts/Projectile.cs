@@ -1,9 +1,11 @@
 using System.Runtime.CompilerServices;
+using System.Xml.XPath;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public bool shotByPlayer;
+    public float bulletDmg;
 
     private int maxColliders;
     private LayerMask canBeHit;
@@ -36,6 +38,11 @@ public class Projectile : MonoBehaviour
             // damage enemies, players
             for (int i = 0; i < numHits; i++)
             {
+                if (results[i].gameObject.layer == 6 || results[i].gameObject.layer == 8) // hit player or enemy
+                {
+                    results[i].GetComponent<Health>().damage(bulletDmg);
+                }
+
                 if (results[i].gameObject.layer == 6) // player layer
                 {
                     Debug.Log("hit player");
