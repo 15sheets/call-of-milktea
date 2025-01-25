@@ -34,14 +34,14 @@ public class StatMan : MonoBehaviour
         if (!pause) { timer += Time.deltaTime; }
     }
 
-    public void decBulletCooldown(float subamt, bool set=false)
+    public void decBulletCooldown(float multamt, bool set=false)
     {
-        bulletCooldown = (set) ? subamt : bulletCooldown - subamt;
+        bulletCooldown = (set) ? multamt : bulletCooldown * multamt;
     }
 
-    public void incBulletRadius(float multamt, bool set=false)
+    public void incBulletRadius(float addamt)
     {
-        bulletRadius = (set) ? multamt : bulletRadius * multamt;
+        bulletRadius += addamt;
     }
 
     public void incBulletSpeed(float multamt, bool set=false)
