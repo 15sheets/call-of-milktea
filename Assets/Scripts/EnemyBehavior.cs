@@ -5,6 +5,7 @@ public class EnemyBehavior : MonoBehaviour
     public EnemyFSM fsm { get; private set; }
 
     // set in editor
+    public float rotationSpeed; // speed enemy rotates to face player
     public float maxNavRange; // range where enemy will try to dodge obstacles
     public float maxChaseRange; // won't follow player if out of this range
     public float maxAttackRange; // range where enemy will start attacking
@@ -21,6 +22,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private int navIdx; // 0 for left, 1 for right
     private LayerMask lm;
+    private float faceAngle;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,6 +33,7 @@ public class EnemyBehavior : MonoBehaviour
 
         navIdx = Random.Range(0, 2);
         lm = LayerMask.GetMask("Player", "Terrain");
+        faceAngle = 0;
     }
 
     // Update is called once per frame
@@ -51,7 +54,22 @@ public class EnemyBehavior : MonoBehaviour
         calcNav();
         fsm.FixedUpdate();
 
+        Vector3 playerdxn = StatMan.sm.getPlayerPosition() - transform.position;
+        playerdxn.y = 0;
+        float angle = Mathf.Atan2(playerdxn.z, playerdxn.x) * Mathf.Rad2Deg;
+        faceAngle = Mathf.LerpAngle(faceAngle, angle, rotationSpeed * Time.fixedDeltaTime);
+        
+        transform.rotation = Quaternion.Euler(0, -faceAngle, 0);
         transform.Translate(goalVelocity * Time.fixedDeltaTime, Space.World);
+
+        if (faceAngle > 180)
+        {
+            faceAngle = -faceAngle - 360;
+        }
+        if (faceAngle < -180)
+        {
+            faceAngle += 360;
+        }
     }
 
     private void calcNav()

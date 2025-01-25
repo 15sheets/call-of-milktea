@@ -110,7 +110,7 @@ public class IdleState : IState
 
     public void Enter()
     {
-        Debug.Log("entered idle state");
+        //.Log("entered idle state");
     }
 
     public void Update()
@@ -133,7 +133,7 @@ public class IdleState : IState
 
     public void Exit()
     {
-        Debug.Log("exited idle state");
+        //.Log("exited idle state");
     }
 }
 
@@ -149,7 +149,7 @@ public class ChaseState : IState
 
     public void Enter()
     {
-        Debug.Log("entered chase state");
+        //.Log("entered chase state");
     }
 
     public void Update()
@@ -172,7 +172,7 @@ public class ChaseState : IState
 
     public void Exit()
     {
-        Debug.Log("exited chase state");
+        //Debug.Log("exited chase state");
     }
 }
 
@@ -191,7 +191,7 @@ public class NavState : IState
 
     public void Enter()
     {
-        Debug.Log("entered nav state");
+        //Debug.Log("entered nav state");
     }
 
     public void Update()
@@ -215,7 +215,7 @@ public class NavState : IState
 
     public void Exit()
     {
-        Debug.Log("exited nav state");
+        //Debug.Log("exited nav state");
     }
 }
 
@@ -234,7 +234,7 @@ public class AttackState : IState
 
     public void Enter()
     {
-        Debug.Log("entered attack state");
+        //Debug.Log("entered attack state");
         enemy.attackStart = true;
     }
 
@@ -258,6 +258,6 @@ public class AttackState : IState
     public void Exit()
     {
         enemy.attackDone = false;
-        Debug.Log("exited attack state");
+        //Debug.Log("exited attack state");
     }
 }
