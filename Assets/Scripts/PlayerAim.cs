@@ -7,6 +7,8 @@ using UnityEngine;
 
         #region Editor Settings
 
+        [SerializeField] private int initMaxAmmo;
+
         [Header("Aim")]
         [SerializeField] private bool aim;
         [SerializeField] private LayerMask groundMask;
@@ -40,14 +42,14 @@ using UnityEngine;
         private void Start()
         {
             mainCamera = Camera.main;
-
+            StatMan.sm.incMaxAmmo(initMaxAmmo);
         }
 
         private void Update()
         {
             Aim();
             Shoot();
-            ChangeTargetMode();
+            //ChangeTargetMode();
             GizmoSettings();
         }
 
@@ -138,13 +140,14 @@ using UnityEngine;
 
         private void Shoot()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && StatMan.sm.useAmmo())
             {
                 var projectile = Instantiate(projectilePrefab, prefabSpawn.position, Quaternion.identity);
                 projectile.transform.forward = aimedTransform.forward;
             }
         }
 
+    /*
         private void ChangeTargetMode()
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -152,6 +155,7 @@ using UnityEngine;
                 ignoreHeight = !ignoreHeight;
             }
         }
+    */
 
         private void GizmoSettings()
         {
