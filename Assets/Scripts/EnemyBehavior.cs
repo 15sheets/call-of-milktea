@@ -26,7 +26,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private int navIdx; // 0 for left, 1 for right
     private LayerMask lm;
-    private float faceAngle;
+    private Vector3 faceDxn;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,7 +37,7 @@ public class EnemyBehavior : MonoBehaviour
 
         navIdx = Random.Range(0, 2);
         lm = LayerMask.GetMask("Player", "Terrain");
-        faceAngle = 0;
+        faceDxn = transform.forward;
 
         if (attack == null)
         {
@@ -66,20 +66,16 @@ public class EnemyBehavior : MonoBehaviour
 
         Vector3 playerdxn = StatMan.sm.getPlayerPosition() - transform.position;
         playerdxn.y = 0;
-        float angle = Mathf.Atan2(playerdxn.z, playerdxn.x) * Mathf.Rad2Deg;
-        faceAngle = Mathf.LerpAngle(faceAngle, angle, rotationSpeed * Time.fixedDeltaTime);
-        
-        transform.rotation = Quaternion.Euler(0, -faceAngle, 0);
-        transform.Translate(goalVelocity * Time.fixedDeltaTime, Space.World);
+        //float angle = Mathf.Atan2(playerdxn.z, playerdxn.x) * Mathf.Rad2Deg;
+        faceDxn = Vector3.Slerp(faceDxn, playerdxn, rotationSpeed * Time.fixedDeltaTime);
 
-        if (faceAngle > 180)
-        {
-            faceAngle = -faceAngle - 360;
-        }
-        if (faceAngle < -180)
-        {
-            faceAngle += 360;
-        }
+        //faceDxn = Mathf.LerpAngle(faceDxn, playerdxn, rotationSpeed * Time.fixedDeltaTime);
+
+        goalVelocity.y = 0;
+
+        transform.forward = faceDxn;
+        //transform.rotation = Quaternion.Euler(0, -faceAngle, 0);
+        transform.Translate(goalVelocity * Time.fixedDeltaTime, Space.World);
     }
 
     private void calcNav()

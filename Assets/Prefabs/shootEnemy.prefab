@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 191373325706908170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.54178053, y: 0.19633, z: 0.46060994}
+  m_LocalPosition: {x: 0, y: 0.19633, z: -1.044}
   m_LocalScale: {x: 0.4125375, y: 0.26143175, z: 0.72487}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -259,12 +259,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  moneyDropped: 0
-  rotationSpeed: 3
-  maxNavRange: 5
-  maxChaseRange: 100
-  maxAttackRange: 10
-  maxSpeed: 3
+  moneyDropped: 2
+  rotationSpeed: 5
+  maxNavRange: 35
+  maxChaseRange: 125
+  maxAttackRange: 60
+  maxSpeed: 20
   shouldNav: 0
   navDirection: {x: 0, y: 0, z: 0}
   attackDone: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  hp: 10
+  hp: 7
   death:
     m_PersistentCalls:
       m_Calls:
@@ -359,9 +359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e5c460fe03ef04ea38a8f5e6f4754d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windupTime: 0
-  shootVelocity: 0
-  shootTime: 0
-  contactDmg: 0
+  windupTime: 2
+  shootTime: 0.3
+  contactDmg: 0.5
   attacking: 0
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3059590958195979202, guid: 3a9e2a8515c73b14298588e05fa552e1, type: 3}

@@ -4,7 +4,6 @@ public class EnemyShootAttack : MonoBehaviour
 {
     
     public float windupTime;
-    public float shootVelocity;
     public float shootTime;
 
     public float contactDmg;
@@ -16,13 +15,15 @@ public class EnemyShootAttack : MonoBehaviour
     private float timer;
     private Vector3 shootDxn;
     private EnemyBehavior eb;
-    private float totalTime;
+    //private float totalTime;
+
+    private bool shot;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         eb = GetComponent<EnemyBehavior>();
-        totalTime = windupTime + shootTime;
+        //totalTime = windupTime + shootTime;
 
     }
 
@@ -35,12 +36,20 @@ public class EnemyShootAttack : MonoBehaviour
 
             timer += Time.deltaTime;
         } 
+        /*
         else if (attacking && timer < totalTime)
         {
             Aim();
             Shoot();
             timer += Time.deltaTime;
-        } 
+        } */
+        else if (attacking && !shot)
+        {
+            //Aim();
+            Shoot();
+            shot = true;
+
+        }
         else if (attacking)
         {
             attacking = false;
@@ -50,7 +59,7 @@ public class EnemyShootAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("enemy hit player");
+        //Debug.Log("enemy hit player");
 
         if (other.gameObject.layer == 6)
         {
@@ -62,7 +71,7 @@ public class EnemyShootAttack : MonoBehaviour
     {
         attacking = true;
         timer = 0;
-        shootDxn = Vector3.zero;
+        shot = false;
     }
 
     private void Aim()
@@ -73,13 +82,12 @@ public class EnemyShootAttack : MonoBehaviour
             shootDxn.y = 0;
 
             // Make the transform look the direction it's aiming
-            transform.forward = shootDxn;
+            //transform.forward = shootDxn;
         }
 
-        private void Shoot()
-        {
-            var projectile = Instantiate(projectilePrefab, transform.Find("BulletSpawnPoint").gameObject.transform.position, Quaternion.identity);
-            projectile.transform.forward = transform.forward;
-
-        }
+    private void Shoot()
+    {
+        var projectile = Instantiate(projectilePrefab, transform.Find("BulletSpawnPoint").gameObject.transform.position, Quaternion.identity);
+        projectile.transform.forward = transform.forward;
+    }
 }

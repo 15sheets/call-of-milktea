@@ -19,7 +19,7 @@ public class Projectile : MonoBehaviour
         canBeHit = (shotByPlayer) ? LayerMask.GetMask("Terrain", "Enemies") : LayerMask.GetMask("Terrain", "Player");
 
         // change scale based on statman
-        float scale = initRad + StatMan.sm.bulletRadius;
+        float scale = (shotByPlayer) ? initRad + StatMan.sm.bulletRadius : initRad;
         transform.localScale = new Vector3(scale, scale, scale);
 
         maxColliders = 5;
