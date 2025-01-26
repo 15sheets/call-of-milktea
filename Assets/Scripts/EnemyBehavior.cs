@@ -112,7 +112,7 @@ public class EnemyBehavior : MonoBehaviour
         // add money to player balance
         StatMan.sm.addMoney(moneyDropped);
         StatMan.sm.enemiesKilled++;
-        // play animation --- UPDATE POSITION OF THIS AFTER ADDING MODELS TO GAME
+        // play animation
         Instantiate(dieAnimPrefab, transform.position, transform.rotation);
         // destroy self
         Destroy(gameObject);
