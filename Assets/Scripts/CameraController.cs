@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float moveSpeed;
+    public float moveSpeedOffset;
     public Vector3 offset;
     public float followDistance;
     public Quaternion rotation;
@@ -12,10 +12,17 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Transform toTrack;
 
+    private float moveSpeed;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
+    }
+
+    private void Update()
+    {
+        moveSpeed = StatMan.sm.playerSpeed - moveSpeedOffset;
     }
 
     // Update is called once per frame

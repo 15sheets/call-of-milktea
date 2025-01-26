@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
         }
     }
     
-    public void heal(float healamt)
+    public void heal()
     {
         if (isPlayer)
         {
