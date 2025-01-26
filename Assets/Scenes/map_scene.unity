@@ -594,6 +594,26 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 438704282}
+    - target: {fileID: 996256843060235243, guid: fd4d08e4194f9db4196a3b993331d108, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 996256843060235243, guid: fd4d08e4194f9db4196a3b993331d108, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996256843060235243, guid: fd4d08e4194f9db4196a3b993331d108, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602693482582116683, guid: fd4d08e4194f9db4196a3b993331d108, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602693482582116683, guid: fd4d08e4194f9db4196a3b993331d108, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3605393272455474965, guid: fd4d08e4194f9db4196a3b993331d108, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
@@ -1565,7 +1585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8773645188835388266, guid: 2cf0244fbbd0f5e49928cbe7f481ccb1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
