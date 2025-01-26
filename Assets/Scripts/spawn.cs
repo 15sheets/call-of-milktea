@@ -48,7 +48,7 @@ public class Spawn : MonoBehaviour
 
     void SpawnEnemy(GameObject prefab, Vector3 spawnPos) {
         var bounds = prefab.GetComponent<Renderer>().bounds;
-        spawnPos.y = bounds.size.y / 2;
+        spawnPos.y = this.transform.position.y + bounds.size.y / 2;
 
         Instantiate(prefab, spawnPos, Quaternion.identity, this.transform);
     }
