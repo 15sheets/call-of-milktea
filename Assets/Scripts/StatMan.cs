@@ -80,9 +80,9 @@ public class StatMan : MonoBehaviour
         Debug.Log("player damaged");
         player_hp.damage(dmg);
     }
-    public void healPlayer(float health)
+    public void healPlayer()
     {
-        player_hp.heal(health);
+        player_hp.heal();
     }
 
     public void decBulletCooldown(float multamt, bool set=false)

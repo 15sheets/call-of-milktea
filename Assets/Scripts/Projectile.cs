@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     public bool shotByPlayer;
     public float bulletDmg;
+    public float bulletSpeed;
+    public float initRad;
 
     private int maxColliders;
     private LayerMask canBeHit;
@@ -17,7 +19,7 @@ public class Projectile : MonoBehaviour
         canBeHit = (shotByPlayer) ? LayerMask.GetMask("Terrain", "Enemies") : LayerMask.GetMask("Terrain", "Player");
 
         // change scale based on statman
-        float scale = (StatMan.sm.bulletRadius < 0.01f) ? .5f : StatMan.sm.bulletRadius;
+        float scale = initRad + StatMan.sm.bulletRadius;
         transform.localScale = new Vector3(scale, scale, scale);
 
         maxColliders = 5;
@@ -26,12 +28,12 @@ public class Projectile : MonoBehaviour
     private void FixedUpdate()
     {
         // continue moving in direction
-        float speed = (StatMan.sm.bulletSpeed < 0.1f) ? 20 : StatMan.sm.bulletSpeed;
-        transform.Translate(0f, 0f, speed * Time.fixedDeltaTime);
+        //float speed = (StatMan.sm.bulletSpeed < 0.1f) ? 60 : StatMan.sm.bulletSpeed;
+        transform.Translate(0f, 0f, bulletSpeed * Time.fixedDeltaTime);
 
         // raycast check for collisions
         Collider[] results = new Collider[maxColliders];
-        int numHits = Physics.OverlapSphereNonAlloc(transform.position, StatMan.sm.bulletRadius / 2, results, canBeHit);
+        int numHits = Physics.OverlapSphereNonAlloc(transform.position, (initRad + StatMan.sm.bulletRadius) / 2, results, canBeHit);
 
         if (numHits > 0)
         {

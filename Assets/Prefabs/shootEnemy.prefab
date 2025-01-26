@@ -356,12 +356,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8249366529264098204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4556619a7c2f04e5d885ed1b96f0e4e2, type: 3}
+  m_Script: {fileID: 11500000, guid: 99e5c460fe03ef04ea38a8f5e6f4754d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  windupTime: 1
-  shootVelocity: 8
-  shootTime: 0.08
-  contactDmg: 0.5
+  windupTime: 0
+  shootVelocity: 0
+  shootTime: 0
+  contactDmg: 0
   attacking: 0
-  projectilePrefab: {fileID: 3059590958195979202, guid: 7f289098ffc1a452cad072791fed7b68, type: 3}
+  projectilePrefab: {fileID: 0}

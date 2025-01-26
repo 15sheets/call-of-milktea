@@ -101,3 +101,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotByPlayer: 1
   bulletDmg: 3
+  bulletSpeed: 50
+  initRad: 0.5
