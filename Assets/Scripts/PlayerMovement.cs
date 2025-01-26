@@ -7,11 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] 
     private Camera cam;
 
-    private void Awake()
-    {
-
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +27,12 @@ public class PlayerMovement : MonoBehaviour
         float pspeed = StatMan.sm.playerSpeed; // statman.sm.maxplayerspeed
         Vector3 dxn = Vector3.ClampMagnitude(forwardMovement + horizontalMovement, 1);
         transform.Translate(dxn * pspeed * Time.fixedDeltaTime, Space.World);
+    }
+
+    public void die()
+    {
+        StatMan.sm.pauseTimer(true);
+        StatMan.sm.endGame();
     }
 
     // Update is called once per frame

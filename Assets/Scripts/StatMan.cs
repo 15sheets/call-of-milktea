@@ -1,5 +1,6 @@
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatMan : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class StatMan : MonoBehaviour
     public int money { get; private set; } // current balance
     public int ammo { get; private set; }
 
+    public float totalTime;
     public int numTeasDrank;
     public int totalMoney;
     public int enemiesKilled;
@@ -33,9 +35,17 @@ public class StatMan : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
-    private void Update()
-    {
+    private void Update()          
+    { 
+        // CHANGE THIS TO CHECK AND ONLY INC TIMER IF THE CURRENT SCENE IS THE GAMESCENE
         if (!pause) { timer += Time.deltaTime; }
+    }
+
+    public void endGame()
+    {
+        totalTime = timer;
+        timer = 0;
+        //SceneManager.LoadScene()
     }
 
     public bool useAmmo()

@@ -260,6 +260,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  dieAnimPrefab: {fileID: 7145212118235855415, guid: 818d971f19b74d9479c28c4325086afc, type: 3}
   moneyDropped: 5
   rotationSpeed: 5
   maxNavRange: 35

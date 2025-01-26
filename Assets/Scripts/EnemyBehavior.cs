@@ -7,6 +7,8 @@ public class EnemyBehavior : MonoBehaviour
 
     public UnityEvent attack;
 
+    [SerializeField] private GameObject dieAnimPrefab;
+
     // set in editor
     public int moneyDropped;
     public float rotationSpeed; // speed enemy rotates to face player
@@ -110,7 +112,8 @@ public class EnemyBehavior : MonoBehaviour
         // add money to player balance
         StatMan.sm.addMoney(moneyDropped);
         StatMan.sm.enemiesKilled++;
-        // play animation (later)
+        // play animation --- UPDATE POSITION OF THIS AFTER ADDING MODELS TO GAME
+        Instantiate(dieAnimPrefab, transform.position, transform.rotation);
         // destroy self
         Destroy(gameObject);
     }
