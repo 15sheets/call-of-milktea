@@ -12,6 +12,7 @@ using UnityEngine;
         [Header("Aim")]
         [SerializeField] private bool aim;
         [SerializeField] private LayerMask groundMask;
+
         [SerializeField] private bool ignoreHeight;
         [SerializeField] private Transform aimedTransform;
 
@@ -112,7 +113,7 @@ using UnityEngine;
                 // Direction is usually normalized, 
                 // but it does not matter in this case.
                 var direction = position - aimedTransform.position;
-
+                print(direction);
                 if (ignoreHeight)
                 {
                     // Ignore the height difference.
