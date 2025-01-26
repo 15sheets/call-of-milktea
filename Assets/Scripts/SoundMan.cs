@@ -85,7 +85,7 @@ public class SoundMan : MonoBehaviour
 
     public void BobaHit()
     {
-        sfxAudioSource.PlayOneShot(splatClip);
+        sfxAudioSource.PlayOneShot(splatClip, 0.1f);
     }
     
     /*
