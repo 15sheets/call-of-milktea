@@ -29,8 +29,9 @@ public class PlayerMovement : MonoBehaviour
         Vector3 horizontalMovement = cam.transform.right * Input.GetAxis("Horizontal");
 
         // maybe come back and change this to rb physics stuff later; once map exists and stuff.
+        float pspeed = StatMan.sm.playerSpeed; // statman.sm.maxplayerspeed
         Vector3 dxn = Vector3.ClampMagnitude(forwardMovement + horizontalMovement, 1);
-        transform.Translate(dxn * StatMan.sm.playerSpeed * Time.fixedDeltaTime, Space.World);
+        transform.Translate(dxn * pspeed * Time.fixedDeltaTime, Space.World);
     }
 
     // Update is called once per frame
