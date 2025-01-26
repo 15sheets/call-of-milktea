@@ -110,6 +110,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         // add money to player balance
         StatMan.sm.addMoney(moneyDropped);
+        StatMan.sm.enemiesKilled++;
         // play animation (later)
         // destroy self
         Destroy(gameObject);
