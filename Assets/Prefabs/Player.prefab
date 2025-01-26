@@ -265,7 +265,7 @@ MonoBehaviour:
   aim: 1
   groundMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 512
   ignoreHeight: 1
   aimedTransform: {fileID: 2639688638762681143}
   projectilePrefab: {fileID: 3059590958195979202, guid: 9dda59993bc792c4bb6e314e831476a4, type: 3}
