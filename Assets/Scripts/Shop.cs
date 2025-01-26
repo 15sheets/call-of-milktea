@@ -61,7 +61,8 @@ public class Shop : MonoBehaviour
         if (inside && spacePress && StatMan.sm.subMoney(price))
         {
             purchase.Invoke();
-            Debug.Log("purchase");
+            StatMan.sm.numTeasDrank++;
+            Debug.Log(StatMan.sm.numTeasDrank);
         }
 
         tmp.text = label + "\n$" + price.ToString();

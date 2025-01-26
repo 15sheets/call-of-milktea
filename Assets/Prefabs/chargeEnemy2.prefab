@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3158747749838329336}
   - component: {fileID: 192192351867119010}
   - component: {fileID: 7446832684930350489}
+  - component: {fileID: 7849436396004841665}
   - component: {fileID: 7177562673707241949}
   - component: {fileID: 839415973531526905}
   m_Layer: 8
@@ -118,7 +119,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  moneyDropped: 1
+  moneyDropped: 3
   rotationSpeed: 4
   maxNavRange: 25
   maxChaseRange: 100
@@ -176,6 +177,26 @@ MonoBehaviour:
   chargeDmg: 3
   contactDmg: 0.5
   attacking: 0
+--- !u!114 &7849436396004841665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375884916459614958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4b8a16663dd704b887bdf35755ef0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  alotoftea: 0
+  minWigglePhase: 6
+  maxWigglePhase: 8
+  minWiggleAmplitude: 0.5
+  maxWiggleAmplitude: 0.9
+  wigglePhase: 0
+  wiggleAmplitude: 0
 --- !u!54 &7177562673707241949
 Rigidbody:
   m_ObjectHideFlags: 0

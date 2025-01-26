@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2936328345721456897}
   - component: {fileID: 3481738129800781617}
   - component: {fileID: 318186142873560006}
+  - component: {fileID: 1442090058883631027}
   - component: {fileID: 935048967430152034}
   m_Layer: 8
   m_Name: chargeEnemy
@@ -203,6 +204,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &1442090058883631027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249366529264098204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4b8a16663dd704b887bdf35755ef0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  alotoftea: 0
+  minWigglePhase: 4
+  maxWigglePhase: 6
+  minWiggleAmplitude: 0.5
+  maxWiggleAmplitude: 0.8
+  wigglePhase: 0
+  wiggleAmplitude: 0
 --- !u!65 &935048967430152034
 BoxCollider:
   m_ObjectHideFlags: 0

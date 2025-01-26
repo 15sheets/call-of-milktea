@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: 318186142873560006}
   - component: {fileID: 935048967430152034}
   - component: {fileID: -3497919549674877723}
+  - component: {fileID: -2069835440745728377}
   m_Layer: 8
   m_Name: shootEnemy
   m_TagString: Untagged
@@ -259,7 +260,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  moneyDropped: 2
+  moneyDropped: 5
   rotationSpeed: 5
   maxNavRange: 35
   maxChaseRange: 125
@@ -364,3 +365,23 @@ MonoBehaviour:
   contactDmg: 0.5
   attacking: 0
   projectilePrefab: {fileID: 3059590958195979202, guid: 3a9e2a8515c73b14298588e05fa552e1, type: 3}
+--- !u!114 &-2069835440745728377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249366529264098204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4b8a16663dd704b887bdf35755ef0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  alotoftea: 0
+  minWigglePhase: 6
+  maxWigglePhase: 7
+  minWiggleAmplitude: 0.5
+  maxWiggleAmplitude: 0.8
+  wigglePhase: 0
+  wiggleAmplitude: 0
