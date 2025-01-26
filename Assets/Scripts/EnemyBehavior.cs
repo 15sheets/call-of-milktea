@@ -54,7 +54,13 @@ public class EnemyBehavior : MonoBehaviour
         {
             // attack code goes here l8r
             attackStart = false;
-
+            
+            int enemySpeak = Random.Range(0, 6);
+            if (enemySpeak == 1)
+            {
+                SoundMan.sm.EnemyAttack();
+            }
+            
             attack.Invoke();
         }
         fsm.Update();   
@@ -114,6 +120,22 @@ public class EnemyBehavior : MonoBehaviour
         StatMan.sm.enemiesKilled++;
         // play animation
         Instantiate(dieAnimPrefab, transform.position, transform.rotation);
+        // play death sound
+        SoundMan.sm.EnemyHit();
+        // maybe play character sound in reaction
+        int playerSpeak = Random.Range(0, 100);
+        switch (playerSpeak)
+        {
+            case < 60:
+                SoundMan.sm.PlayerLaugh();
+                break;
+            case > 80:
+                SoundMan.sm.PlayerVocal();
+                break;
+            case 77:
+                SoundMan.sm.PlayerRatedR();
+                break;
+        }
         // destroy self
         Destroy(gameObject);
     }

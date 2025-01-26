@@ -15,6 +15,8 @@ public class Projectile : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        SoundMan.sm.BobaShoot();
+
         // exclude collision check layers
         canBeHit = (shotByPlayer) ? LayerMask.GetMask("Terrain", "Enemies") : LayerMask.GetMask("Terrain", "Player");
 
@@ -62,6 +64,7 @@ public class Projectile : MonoBehaviour
                 }
                 */
             }
+            SoundMan.sm.BobaHit();
             Destroy(gameObject);
         }
     }
