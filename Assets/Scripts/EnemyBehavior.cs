@@ -95,6 +95,9 @@ public class EnemyBehavior : MonoBehaviour
             {
                 navDirection *= -1; // right
             } 
+
+            // Look in the direction its going
+            transform.forward = navDirection;
         } else
         {
             shouldNav = false;

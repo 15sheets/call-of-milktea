@@ -35,6 +35,7 @@ public class Projectile : MonoBehaviour
 
         if (numHits > 0)
         {
+            Debug.Log("something was hit");
             // damage enemies, players
             for (int i = 0; i < numHits; i++)
             {
