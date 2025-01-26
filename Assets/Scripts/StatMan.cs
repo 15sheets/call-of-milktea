@@ -25,7 +25,7 @@ public class StatMan : MonoBehaviour
     public int maxAmmo { get; private set; }
 
     private Transform player;
-    private Health player_hp;
+    public Health player_hp;
     private bool pause;
 
     void Awake()
