@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 5615698221778608511}
   - component: {fileID: 8792119544227854608}
   - component: {fileID: 3067782679601269731}
+  - component: {fileID: 7933604437917118885}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -264,7 +265,7 @@ MonoBehaviour:
   aim: 1
   groundMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 512
   ignoreHeight: 1
   aimedTransform: {fileID: 2639688638762681143}
   projectilePrefab: {fileID: 3059590958195979202, guid: 9dda59993bc792c4bb6e314e831476a4, type: 3}
@@ -273,6 +274,20 @@ MonoBehaviour:
   gizmo_ground: 0
   gizmo_target: 0
   gizmo_ignoredHeightTarget: 0
+--- !u!114 &7933604437917118885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835129552269565251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5dbd544595c684692ada3e0d215047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initMoveSpeed: 5
+  cam: {fileID: 0}
 --- !u!1 &1647980806022591536
 GameObject:
   m_ObjectHideFlags: 0

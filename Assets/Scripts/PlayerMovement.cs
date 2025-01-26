@@ -7,16 +7,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] 
     private Camera cam;
 
-    private void Awake()
+    private void Start()
     {
         StatMan.sm.setPlayer(transform);
         StatMan.sm.incPlayerSpeed(initMoveSpeed);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
     }
 
     private void FixedUpdate()
