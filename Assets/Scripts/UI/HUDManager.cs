@@ -33,7 +33,6 @@ public class HUDManager : MonoBehaviour
     {
         //This adds the delegate event on the Health script to this script so when the current health value has changed, this script can run the ChangeValue() method
         //Health.UpdateHealth += ChangeValue;
-        ammoCount = 
     }
 
     // Update is called once per frame

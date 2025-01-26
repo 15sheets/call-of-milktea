@@ -8,9 +8,14 @@ public class MainMenu : MonoBehaviour
     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
    }
 
-   public void Quite()
+   public void Quit()
    {
     Application.Quit();
     Debug.Log("Player Has Quit The Game");
+   }
+
+   public void Credits()
+   {
+    SceneManager.LoadScene("credits");
    }
 }
