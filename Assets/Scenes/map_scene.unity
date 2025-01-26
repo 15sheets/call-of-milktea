@@ -129,15 +129,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3251165333564198609, guid: af8f65c9a464de443933005568a40847, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.78
+      value: -12.5
       objectReference: {fileID: 0}
     - target: {fileID: 3251165333564198609, guid: af8f65c9a464de443933005568a40847, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.4
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3251165333564198609, guid: af8f65c9a464de443933005568a40847, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.77
+      value: -50.6
       objectReference: {fileID: 0}
     - target: {fileID: 3251165333564198609, guid: af8f65c9a464de443933005568a40847, type: 3}
       propertyPath: m_LocalRotation.w
@@ -749,6 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aaab5c738f43da43a8a397971bb200a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalTime: 0
   numTeasDrank: 0
   totalMoney: 0
   enemiesKilled: 0
@@ -1663,15 +1664,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2762722933435944592, guid: c91d04d3c1bfb6948b732e3bc79ae603, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.8
+      value: -42.7
       objectReference: {fileID: 0}
     - target: {fileID: 2762722933435944592, guid: c91d04d3c1bfb6948b732e3bc79ae603, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.2
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2762722933435944592, guid: c91d04d3c1bfb6948b732e3bc79ae603, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.77
+      value: -50.5
       objectReference: {fileID: 0}
     - target: {fileID: 2762722933435944592, guid: c91d04d3c1bfb6948b732e3bc79ae603, type: 3}
       propertyPath: m_LocalRotation.w
