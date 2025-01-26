@@ -21,7 +21,6 @@ public class EnemyChargeAttack : MonoBehaviour
     {
         eb = GetComponent<EnemyBehavior>();
         totalTime = windupTime + chargeTime;
-
     }
 
     // Update is called once per frame
@@ -59,9 +58,21 @@ public class EnemyChargeAttack : MonoBehaviour
 
         if (other.gameObject.layer == 6 && attacking)
         {
+            int playerSpeak = Random.Range(0, 6);
+            if (playerSpeak == 1)
+            {
+                SoundMan.sm.PlayerHit();
+            }
+            
             StatMan.sm.damagePlayer(chargeDmg);
         } else if (other.gameObject.layer == 6)
         {
+            int playerSpeak = Random.Range(0, 6);
+            if (playerSpeak == 1)
+            {
+                SoundMan.sm.PlayerHit();
+            }
+            
             StatMan.sm.damagePlayer(contactDmg);
         }
     }
