@@ -10,9 +10,10 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SoundMan.sm.PlayerLaugh();
         StatMan.sm.setPlayer(transform);
         StatMan.sm.incPlayerSpeed(initMoveSpeed);
+        SoundMan.sm.PlayerLaugh();
+
     }
 
     private void FixedUpdate()

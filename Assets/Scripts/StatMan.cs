@@ -32,7 +32,7 @@ public class StatMan : MonoBehaviour
     {
         if (sm != null && sm != this) { Destroy(this); }
         sm = this; 
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
 
     private void Update()          
