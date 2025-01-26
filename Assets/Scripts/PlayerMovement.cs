@@ -9,14 +9,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        StatMan.sm.setPlayer(transform);
-        StatMan.sm.incPlayerSpeed(initMoveSpeed);
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StatMan.sm.setPlayer(transform);
+        StatMan.sm.incPlayerSpeed(initMoveSpeed);
     }
 
     private void FixedUpdate()

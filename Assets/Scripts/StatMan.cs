@@ -8,6 +8,8 @@ public class StatMan : MonoBehaviour
     public static StatMan sm { get; private set; }
 
     public float timer { get; private set; } // still deciding where to do calcs and set this up ?
+    public int money { get; private set; } // current balance
+    public int ammo { get; private set; }
 
     public int numTeasDrank;
     public int totalMoney;
@@ -18,6 +20,7 @@ public class StatMan : MonoBehaviour
     public float bulletSpeed { get; private set; }
     public float bulletRadius { get; private set; }
     public float bulletCooldown { get; private set; }
+    public int maxAmmo { get; private set; }
 
     private Transform player;
     private Health player_hp;
@@ -33,6 +36,43 @@ public class StatMan : MonoBehaviour
     private void Update()
     {
         if (!pause) { timer += Time.deltaTime; }
+    }
+
+    public bool useAmmo()
+    {
+        if (ammo > 0)
+        {
+            ammo -= 1;
+            return true;
+        }
+        return false;
+    }
+
+    public void refillAmmo()
+    {
+        ammo = maxAmmo;
+    }
+
+    public void incMaxAmmo(int addamt)
+    {
+        maxAmmo += addamt;
+        ammo = maxAmmo;
+    }
+
+    public bool subMoney(int subamt)
+    {
+        if (money < subamt)
+        {
+            return false;
+        }
+        money -= subamt;
+        return true;
+    }
+
+    public void addMoney(int addamt)
+    {
+        money += addamt;
+        totalMoney += addamt;
     }
 
     public void damagePlayer(float dmg)
@@ -73,7 +113,8 @@ public class StatMan : MonoBehaviour
     public void setPlayer(Transform p)
     {
         player = p;
-        player_hp = p.GetComponent<Health>();
+        bool hpgot = p.TryGetComponent<Health>(out player_hp);
+        //Debug.Log(hpgot);
     }
 
     public Vector3 getPlayerPosition()

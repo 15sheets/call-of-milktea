@@ -8,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     public UnityEvent attack;
 
     // set in editor
+    public int moneyDropped;
     public float rotationSpeed; // speed enemy rotates to face player
     public float maxNavRange; // range where enemy will try to dodge obstacles
     public float maxChaseRange; // won't follow player if out of this range
@@ -103,5 +104,14 @@ public class EnemyBehavior : MonoBehaviour
         // if intersects with a terrain, should nav
             // nav direction - calc normalized perpendicular (xz axis) vectors 
             // pick one based on navIdx
+    }
+
+    public void die()
+    {
+        // add money to player balance
+        StatMan.sm.addMoney(moneyDropped);
+        // play animation (later)
+        // destroy self
+        Destroy(gameObject);
     }
 }
