@@ -146,10 +146,10 @@ MonoBehaviour:
   death:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3375884916459614958}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 3158747749838329336}
+        m_TargetAssemblyTypeName: EnemyBehavior, Assembly-CSharp
+        m_MethodName: die
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

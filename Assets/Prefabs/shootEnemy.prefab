@@ -172,7 +172,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.78, y: 1.35, z: 4.77}
-  m_LocalScale: {x: 1.8353, y: 2.8259, z: 1}
+  m_LocalScale: {x: 8.65, y: 20.5, z: 8.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2587675046384234550}
@@ -287,10 +287,10 @@ MonoBehaviour:
   death:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8249366529264098204}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5122912202631665682}
+        m_TargetAssemblyTypeName: EnemyBehavior, Assembly-CSharp
+        m_MethodName: die
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

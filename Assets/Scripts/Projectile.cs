@@ -37,7 +37,7 @@ public class Projectile : MonoBehaviour
 
         if (numHits > 0)
         {
-            Debug.Log("something was hit");
+            //Debug.Log("something was hit");
             // damage enemies, players
             for (int i = 0; i < numHits; i++)
             {
@@ -46,6 +46,7 @@ public class Projectile : MonoBehaviour
                     results[i].GetComponent<Health>().damage(bulletDmg);
                 }
 
+                /*
                 if (results[i].gameObject.layer == 6) // player layer
                 {
                     Debug.Log("hit player");
@@ -59,6 +60,7 @@ public class Projectile : MonoBehaviour
                 {
                     Debug.Log("hit terrain");
                 }
+                */
             }
             Destroy(gameObject);
         }
