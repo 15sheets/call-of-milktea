@@ -1,4 +1,6 @@
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class EnemyShootAttack : MonoBehaviour
 {
@@ -24,7 +26,6 @@ public class EnemyShootAttack : MonoBehaviour
     {
         eb = GetComponent<EnemyBehavior>();
         //totalTime = windupTime + shootTime;
-
     }
 
     // Update is called once per frame
@@ -64,6 +65,12 @@ public class EnemyShootAttack : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             StatMan.sm.damagePlayer(contactDmg);
+
+            int playerSpeak = Random.Range(0, 6);
+            if (playerSpeak == 1)
+            {
+                SoundMan.sm.PlayerHit();
+            }
         }
     }
 
@@ -89,5 +96,6 @@ public class EnemyShootAttack : MonoBehaviour
     {
         var projectile = Instantiate(projectilePrefab, transform.Find("BulletSpawnPoint").gameObject.transform.position, Quaternion.identity);
         projectile.transform.forward = transform.forward;
+        // shoot sound
     }
 }
